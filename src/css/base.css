@@ -154,52 +154,61 @@ li {
 .theme1 .btn.ios{
     color: #fff;
 }
+
+.theme1-color {
+    --theme-color: var(--theme1-color);
+}
 .theme1-color .btn.ios{
-    background-color: var(--theme1-color);
+    background-color: var(--theme-color);
     color: #fff;
 }
 .theme1-color .btn.android{
-    border:1px solid var(--theme1-color);
-    color: var(--theme1-color);
+    border:1px solid var(--theme-color);
+    color: var(--theme-color);
 }
 .theme1-color .cover{
-    background-color: var(--theme1-color);
+    background-color: var(--theme-color);
 }
 .theme1-color .cover::after{
     content: '';
-    background-color: var(--theme1-color);
+    background-color: var(--theme-color);
 }
 /* --------------------- theme1 end --------------------- */
 
+.theme2-color {
+    --theme-color: var(--theme2-color);
+}
 .theme2-color .btn.ios{
-    background-color: var(--theme2-color);
+    background-color: var(--theme-color);
     color: #fff;
 }
 .theme2-color .btn.android{
-    border:1px solid var(--theme2-color);
-    color: var(--theme2-color);
+    border:1px solid var(--theme-color);
+    color: var(--theme-color);
 }
 .theme2-color .cover{
-    background-color: var(--theme2-color);
+    background-color: var(--theme-color);
 }
 .theme2-color .cover::after{
     content: '';
-    background-color: var(--theme2-color);
+    background-color: var(--theme-color);
 }
-
 /* --------------------- .theme3-color --------------------- */
+.theme3-color {
+    --theme-color: var(--theme3-color);
+}
 .theme3-color .btn.ios{
-    background-color: var(--theme3-color);
+    background-color: var(--theme-color);
     color: #fff;
 }
 .theme3-color .btn.android{
-    border:1px solid var(--theme3-color);
-    color: var(--theme3-color);
+    border:1px solid var(--theme-color);
+    color: var(--theme-color);
 }
 .theme3-color .cover{
-    background-color: var(--theme3-color);
+    background-color: var(--theme-color);
 }
 .theme3-color .cover::after{
     content: '';
-    background-color: var(--theme3-color);
+    background-color: var(--theme-color);
 }
