@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>APP下载</title>
+    <link rel="stylesheet" href="./src/css/base.css" />
+    <style>
+        .box,.box iframe{
+            width: 100%;
+            height: 100%;
+        }
+        .theme-choose{
+            padding: 10px;
+        }
+        .theme-choose > div{
+            height: 30px;
+            width: 60px;
+        }
+        .theme1{
+            background-color: var(--theme1-color);
+        }
+        .theme2{
+            background-color: var(--theme2-color);
+        }
+        .theme3{
+            background-color: var(--theme3-color);
+        }
+        .theme-box{
+            height: 667px;
+            width: 357px;
+            margin: 0 auto;
+            border: 5px solid #333;
+            border-radius: 9px;
+        }
+    </style>
+</head>
+
+<body>
+ <div class="box">
+     <div class="theme-choose flex">
+        <div onclick="setTheme(1)" class="theme1"></div>
+        <div onclick="setTheme(2)" class="theme2"></div>
+        <div onclick="setTheme(3)" class="theme3"></div>
+     </div>
+     <div class="theme-box">
+         <iframe id="themeBox" src="./src/theme1/index.html" frameborder="0"></iframe>
+     </div>
+ </div>
+<script type="text/javascript">
+
+    var $ = function(ele){
+        return document.querySelector(ele);
+    }
+    var setTheme = function(index){
+        $('#themeBox').src="./src/theme"+index+"/index.html"
+    }
+ </script>
+</body>
+
+</html>
