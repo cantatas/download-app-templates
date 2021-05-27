@@ -22,7 +22,7 @@ https://cantatas.github.io/download-app-templates/
 ```js
 
     var config = {
-        cover: '', //封面图片默认：。./imgs/cover4.jpg,替换cover4.jpg即可
+        cover: '', //封面图片默认：imgs文件夹中的cover4.jpg文件,替换即可
         iPhone_download_name: "iPhone下载", // iPhone下载名称
         android_download_name: "Android下载", // Android下载名称
         iPhone_download_url: "", // iPhone下载链接
@@ -45,8 +45,13 @@ https://cantatas.github.io/download-app-templates/
   /* 橙色 */
   --orange-color:#ee7a45;
 
+  /* 主题1 */
   --theme1-color:var(--dark-blue-color);
+  
+  /* 主题2 */
   --theme2-color:var(--green-color);
+  
+  /* 主题3 */
   --theme3-color:var(--orange-color);
 
 ```
