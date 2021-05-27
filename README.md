@@ -1,8 +1,8 @@
 
-<h1 align="center">app下载模板</h1>
+<h1 align="center">APP下载H5页面模板</h1>
 
 <div align="center">
-  免费开源app下载模板，支持微信、钉钉中打开已安装app，未安装自动跳到appstore，持续更新中...
+  免费开源APP下载H5页面模板，支持微信、钉钉中打开已安装app，未安装自动跳到appstore，持续更新中...
 </div>
 
 ## 💻 预览
