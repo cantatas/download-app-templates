@@ -14,12 +14,12 @@
     <meta name="full-screen" content="yes">
     <meta name="x5-fullscreen" content="true">
     <title>APP下载</title>
-    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../../css/base.css" />
 </head>
 
 <body>
-    <div class="app theme1 theme1-color">
-        <div id="eCover" style="background-image: url(./imgs/cover1.jpg);" class="cover"></div>
+    <div class="app style1 theme3">
+        <div id="eCover" style="background-image: url(./imgs/cover3.jpg);" class="cover"></div>
         <div class="btn-group">
             <a id="eIphone" href="" class="btn ios flex ">
                 <svg t="1622038757580" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -29,6 +29,7 @@
                         fill="#ffffff" p-id="1507"></path>
                 </svg>
                 <span>iPhone下载</span>
+
             </a>
             <a id="eAndroid" href="" class="btn android flex">
                 <svg t="1622038313232" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -53,7 +54,6 @@
             android_download_name: "Android下载", // Android下载名称
             iPhone_download_url: "", // iPhone下载链接
             android_download_url: "", // Android下载链接
-            open_app_url : ""
         }
         window.onload = function () {
             var iphone = $('#eIphone');
@@ -61,7 +61,7 @@
             var cover = $('#eCover');
 
             //设置封面
-            cover.style.backgroundImage = 'url(./imgs/cover1.jpg)';
+            cover.style.backgroundImage = 'url(./imgs/cover3.jpg)';
 
             //iphone 下载链接设置
             iphone.href = config.iPhone_download_url;

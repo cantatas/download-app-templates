@@ -31,7 +31,12 @@ html {
     counter-reset: section;
     touch-action: manipulation;
 }
-
+@media screen and (min-width: 375px) {
+    html {
+        font-size:100px;
+        font-size: 1000vw/37.5
+    }
+}
 body,
 button,
 input,
@@ -137,16 +142,19 @@ li {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--theme1-color);
+    background-color: var(--theme1);
     opacity: .2;
 }
 .btn:active{
     opacity: 0.6;
 }
-/* --------------------- theme1 start --------------------- */
-.theme1 .btn{
+.style1 .btn{
     margin: 30px;
     box-shadow: 0 10px 12px -6px #9b9b9b;
+}
+/* --------------------- theme1 start --------------------- */
+.theme1 .btn{
+    --theme-color: var(--theme1-color);
 }
 .theme1 .btn:first-child{
     margin-bottom: 0;
@@ -155,60 +163,57 @@ li {
     color: #fff;
 }
 
-.theme1-color {
-    --theme-color: var(--theme1-color);
-}
-.theme1-color .btn.ios{
+.theme1 .btn.ios{
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme1-color .btn.android{
+.theme1 .btn.android{
     border:1px solid var(--theme-color);
     color: var(--theme-color);
 }
-.theme1-color .cover{
+.theme1 .cover{
     background-color: var(--theme-color);
 }
-.theme1-color .cover::after{
+.theme1 .cover::after{
     content: '';
     background-color: var(--theme-color);
 }
 /* --------------------- theme1 end --------------------- */
 
-.theme2-color {
+.theme2 {
     --theme-color: var(--theme2-color);
 }
-.theme2-color .btn.ios{
+.theme2 .btn.ios{
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme2-color .btn.android{
+.theme2 .btn.android{
     border:1px solid var(--theme-color);
     color: var(--theme-color);
 }
-.theme2-color .cover{
+.theme2 .cover{
     background-color: var(--theme-color);
 }
-.theme2-color .cover::after{
+.theme2 .cover::after{
     content: '';
     background-color: var(--theme-color);
 }
 /* --------------------- .theme3-color --------------------- */
-.theme3-color {
+.theme3 {
     --theme-color: var(--theme3-color);
 }
-.theme3-color .btn.ios{
+.theme3 .btn.ios{
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme3-color .btn.android{
+.theme3 .btn.android{
     border:1px solid var(--theme-color);
     color: var(--theme-color);
 }
-.theme3-color .cover{
+.theme3 .cover{
     background-color: var(--theme-color);
 }
-.theme3-color .cover::after{
+.theme3 .cover::after{
     content: '';
     background-color: var(--theme-color);
 }

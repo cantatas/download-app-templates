@@ -37,8 +37,8 @@
             background-color: var(--theme3-color);
         }
         .theme-box{
-            height: 667px;
-            width: 357px;
+            height: 568px;
+            width: 320px;
             margin: 0 auto;
             border: 5px solid #333;
             border-radius: 9px;
@@ -54,7 +54,7 @@
         <div onclick="setTheme(3)" class="theme3"></div>
      </div>
      <div class="theme-box">
-         <iframe id="themeBox" src="./src/theme1/index.html" frameborder="0"></iframe>
+         <iframe id="themeBox" src="./src/style1/theme1/index.html" frameborder="0"></iframe>
      </div>
  </div>
 <script type="text/javascript">
@@ -63,7 +63,7 @@
         return document.querySelector(ele);
     }
     var setTheme = function(index){
-        $('#themeBox').src="./src/theme"+index+"/index.html"
+        $('#themeBox').src="./src/style1/theme"+index+"/index.html"
     }
  </script>
 </body>

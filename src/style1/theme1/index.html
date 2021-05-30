@@ -14,12 +14,12 @@
     <meta name="full-screen" content="yes">
     <meta name="x5-fullscreen" content="true">
     <title>APP下载</title>
-    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../../css/base.css" />
 </head>
 
 <body>
-    <div class="app theme1 theme2-color">
-        <div id="eCover" style="background-image: url(./imgs/cover2.jpg);" class="cover"></div>
+    <div class="app style1 theme1">
+        <div id="eCover" style="background-image: url(./imgs/cover1.jpg);" class="cover"></div>
         <div class="btn-group">
             <a id="eIphone" href="" class="btn ios flex ">
                 <svg t="1622038757580" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -40,7 +40,9 @@
                 <span>Android下载</span></a>
         </div>
     </div>
+
     <script type="text/javascript">
+
         var $ = function (ele) {
             return document.querySelector(ele);
         }
@@ -51,6 +53,7 @@
             android_download_name: "Android下载", // Android下载名称
             iPhone_download_url: "", // iPhone下载链接
             android_download_url: "", // Android下载链接
+            open_app_url : ""
         }
         window.onload = function () {
             var iphone = $('#eIphone');
@@ -58,7 +61,7 @@
             var cover = $('#eCover');
 
             //设置封面
-            cover.style.backgroundImage = 'url(./imgs/cover2.jpg)';
+            cover.style.backgroundImage = 'url(./imgs/cover1.jpg)';
 
             //iphone 下载链接设置
             iphone.href = config.iPhone_download_url;
