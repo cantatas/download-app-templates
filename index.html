@@ -16,27 +16,40 @@
     <title>APP下载</title>
     <link rel="stylesheet" href="./src/css/base.css" />
     <style>
-        .box,.box iframe{
+        .box,
+        .box iframe {
             width: 100%;
             height: 100%;
         }
-        .theme-choose{
+
+        .theme-choose {
             padding: 10px;
         }
-        .theme-choose > div{
+
+        .theme-choose>div {
             height: 30px;
+            line-height: 30px;
             width: 60px;
+            text-align: center;
         }
-        .theme1{
+
+        .theme1 {
             background-color: var(--theme1-color);
         }
-        .theme2{
+
+        .theme2 {
             background-color: var(--theme2-color);
         }
-        .theme3{
+
+        .theme3 {
             background-color: var(--theme3-color);
         }
-        .theme-box{
+        .link{
+            color: blue;
+            cursor: pointer;
+        }
+
+        .theme-box {
             height: 568px;
             width: 320px;
             margin: 0 auto;
@@ -47,25 +60,39 @@
 </head>
 
 <body>
- <div class="box">
-     <div class="theme-choose flex">
-        <div onclick="setTheme(1)" class="theme1"></div>
-        <div onclick="setTheme(2)" class="theme2"></div>
-        <div onclick="setTheme(3)" class="theme3"></div>
-     </div>
-     <div class="theme-box">
-         <iframe id="themeBox" src="./src/style1/theme1/index.html" frameborder="0"></iframe>
-     </div>
- </div>
-<script type="text/javascript">
+    <div class="box">
+        <div class="theme-choose flex">
+            <div>风格：</div>
+            <div class="link" onclick="setStyle(1)">其他</div>
+            <div class="link" onclick="setStyle(2)">高德</div>
+            <div></div>
+        </div>
+        <div class="theme-choose flex">
+            <div>颜色：</div>
+            <div onclick="setTheme(1)" class="theme1"></div>
+            <div onclick="setTheme(2)" class="theme2"></div>
+            <div onclick="setTheme(3)" class="theme3"></div>
+        </div>
+        <div class="theme-box">
+            <iframe id="themeBox" src="./src/style1/theme1/index.html" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var $ = function (ele) {
+            return document.querySelector(ele);
+        }
+        var style = 1;
+        var theme = 1;
 
-    var $ = function(ele){
-        return document.querySelector(ele);
-    }
-    var setTheme = function(index){
-        $('#themeBox').src="./src/style1/theme"+index+"/index.html"
-    }
- </script>
+        var setTheme = function (index) {
+            theme = index;
+            $('#themeBox').src = "./src/style"+style+"/theme" + theme + "/index.html"
+        }
+        var setStyle = function (index) {
+            style = index;
+            $('#themeBox').src = "./src/style"+style+"/theme" + theme + "/index.html"
+        }
+    </script>
 </body>
 
 </html>

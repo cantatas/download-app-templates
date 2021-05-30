@@ -31,12 +31,12 @@ html {
     counter-reset: section;
     touch-action: manipulation;
 }
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
     html {
         font-size:100px;
         font-size: 1000vw/37.5
     }
-}
+} */
 body,
 button,
 input,
@@ -122,6 +122,18 @@ li {
     font-size: 14px;
     border-radius: 6px;
     text-align: center;
+   text-decoration: none;
+   outline: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   -moz-user-select: none;
+   user-select: none;
+   -webkit-touch-callout: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   outline: none;
+   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   -webkit-tap-highlight-color: transparent;
 }
 .btn svg{
     position: absolute;
@@ -153,7 +165,7 @@ li {
     box-shadow: 0 10px 12px -6px #9b9b9b;
 }
 /* --------------------- theme1 start --------------------- */
-.theme1 .btn{
+.theme1{
     --theme-color: var(--theme1-color);
 }
 .theme1 .btn:first-child{
