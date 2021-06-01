@@ -179,7 +179,7 @@ li {
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme1 .btn.android{
+.theme1.style1 .btn.android{
     border:1px solid var(--theme-color);
     color: var(--theme-color);
 }
@@ -199,7 +199,7 @@ li {
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme2 .btn.android{
+.theme2.style1 .btn.android{
     border:1px solid var(--theme-color);
     color: var(--theme-color);
 }
@@ -218,7 +218,7 @@ li {
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme3 .btn.android{
+.theme3.style1 .btn.android{
     border:1px solid var(--theme-color);
     color: var(--theme-color);
 }

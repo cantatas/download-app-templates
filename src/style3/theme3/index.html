@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="app style2 theme1">
+    <div class="app style2 theme3">
         <div id="eLogo" class="logo"></div>
         <div class="container">
 
@@ -36,7 +36,7 @@
                             fill="#ffffff" p-id="1507"></path>
                     </svg>
                     <span>立即下载</span>
-
+    
                 </a>
                 <a id="eAndroid" href="" class="btn android flex">
                     <svg t="1622038313232" class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -65,28 +65,10 @@
             android_download_url: "", // Android下载链接
             open_app_url: ""
         }
-        var env = function () {
-            var inBrowser = typeof window !== 'undefined'
-            var UA = inBrowser && window.navigator.userAgent.toLowerCase();
-            return {
-                isAndroid: UA && UA.indexOf('android') > 0,
-                isIOS: UA && /iphone|ipad|ipod|ios/.test(UA),
-                isWechat: UA && UA.indexOf('micromessenger') > -1
-            }
-        }
-
         window.onload = function () {
             var iphone = $('#eIphone');
             var android = $('#eAndroid');
             var cover = $('#eLogo');
-
-            if (env().isAndroid) {
-                iphone.style.display = "none";
-                android.style.display = "flex";
-            } else {
-                iphone.style.display = "flex";
-                android.style.display = "none";
-            }
 
             //设置封面
             cover.style.backgroundImage = 'url(./imgs/logo@2x.png)';
