@@ -33,6 +33,14 @@
             text-align: center;
         }
 
+        .style-choose>div {
+            width: auto;
+        }
+
+        .style-choose .flex>div {
+            padding-left: 15px;
+        }
+
         .theme1 {
             background-color: var(--theme1-color);
         }
@@ -44,7 +52,8 @@
         .theme3 {
             background-color: var(--theme3-color);
         }
-        .link{
+
+        .link {
             color: blue;
             cursor: pointer;
         }
@@ -61,13 +70,12 @@
 
 <body>
     <div class="box">
-        <div class="theme-choose flex">
+        <div class="theme-choose style-choose flex">
             <div>风格：</div>
-            <div class="link" onclick="setStyle(1)">其他</div>
-            <div class="link" onclick="setStyle(2)">高德</div>
+            <div class="flex" id="eStyle"></div>
             <div></div>
         </div>
-        <div class="theme-choose flex">
+        <div id="themeChoose" class="theme-choose flex">
             <div>颜色：</div>
             <div onclick="setTheme(1)" class="theme1"></div>
             <div onclick="setTheme(2)" class="theme2"></div>
@@ -81,16 +89,53 @@
         var $ = function (ele) {
             return document.querySelector(ele);
         }
+
+        //模版列表配置
+        var initStyle = function () {
+            var temps = [{
+                        name: '知学云',
+                        id: 1,
+                        hasTheme: true
+                    },
+                    {
+                        name: '高德',
+                        id: 2,
+                        hasTheme: true
+                    },
+                    {
+                        name: '好看视频',
+                        id: 3,
+                        hasTheme: false
+                    }
+                ],
+                eStyle = $('#eStyle'),
+                ele = '';
+
+            for (var i = 0; i <= temps.length - 1; i++) {
+                var item = temps[i]
+                ele += '<div class="link" onclick="setStyle(' + item.id + ',' + item.hasTheme + ')">' + item.name +
+                    '</div>'
+            }
+            eStyle.innerHTML = ele
+
+        }
+        initStyle();
+
         var style = 1;
         var theme = 1;
 
         var setTheme = function (index) {
             theme = index;
-            $('#themeBox').src = "./src/style"+style+"/theme" + theme + "/index.html"
+            $('#themeBox').src = "./src/style" + style + "/theme" + theme + "/index.html"
         }
-        var setStyle = function (index) {
+        var setStyle = function (index, hasTheme) {
             style = index;
-            $('#themeBox').src = "./src/style"+style+"/theme" + theme + "/index.html"
+            $('#themeBox').src = "./src/style" + style + "/theme" + theme + "/index.html";
+            if (hasTheme) {
+                $('#themeChoose').style.display = 'flex'
+            } else {
+                $('#themeChoose').style.display = 'none'
+            }
         }
     </script>
 </body>
