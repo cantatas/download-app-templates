@@ -31,6 +31,9 @@
             line-height: 30px;
             width: 60px;
             text-align: center;
+            border-radius: 5px;
+            margin-right: 5px;
+            cursor: pointer;
         }
 
         .style-choose>div {
@@ -58,6 +61,11 @@
             cursor: pointer;
         }
 
+        .container {
+            position: relative;
+            top: 60px;
+        }
+
         .theme-box {
             height: 568px;
             width: 320px;
@@ -68,9 +76,51 @@
             overflow: hidden;
         }
 
+        .header-component {
+            position: fixed;
+            width: 100%;
+            color: #fff;
+            background-color: #001938;
+            -webkit-user-select: none;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            padding: 0 30px;
+            line-height: 60px;
+            z-index: 99;
+        }
+
+        .header-component .nav {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            font-size: 0;
+            text-align: right;
+        }
+
+        .header-component .nav li {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .header-component .nav li img {
+            display: block;
+            width: 26px;
+            height: 26px;
+            -webkit-transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .header-component .nav li img:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
         .nav-component {
             position: fixed;
-            top: 0;
+            top: 60px;
             bottom: 0;
             left: 0;
             z-index: 1;
@@ -129,24 +179,49 @@
 
 <body>
     <div class="box">
-        <!-- <div class="theme-choose style-choose flex">
-            <div>风格：</div>
-            <div class="flex" id="eStyle"></div>
-        </div> -->
-        <div id="themeChoose" class="theme-choose flex">
-            <div onclick="setTheme(1)" class="theme1"></div>
-            <div onclick="setTheme(2)" class="theme2"></div>
-            <div onclick="setTheme(3)" class="theme3"></div>
-        </div>
-        <div class="theme-box">
-            <iframe id="themeBox" src="./src/style1/theme1/index.html" frameborder="0"></iframe>
+        <div class="header-component">
+            <div class="logo">
+                APP下载页模版
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://github.com/cantatas/download-app-templates">
+                            <img src="./src/imgs/github.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="nav-component">
+            <div class="nav-group">
+                <div class="nav-title">使用指南</div>
+                <div class="items">
+                    <label for="guide1">
+                        <input id="guide1" name="menuitem" type="radio"><span>介绍（待更新）</span>
+                    </label>
+                    <label for="guide2">
+                        <input id="guide2" name="menuitem" type="radio"><span>快速上手（待更新）</span>
+                    </label>
+                </div>
+            </div>
             <div class="nav-group">
                 <div class="nav-title">风格选择</div>
                 <div id="eStyle" class="items"></div>
             </div>
         </div>
+
+        <div class="container">
+            <div id="themeChoose" class="theme-choose flex">
+                <div onclick="setTheme(1)" class="theme1"></div>
+                <div onclick="setTheme(2)" class="theme2"></div>
+                <div onclick="setTheme(3)" class="theme3"></div>
+            </div>
+            <div class="theme-box">
+                <iframe id="themeBox" src="./src/style1/theme1/index.html" frameborder="0"></iframe>
+            </div>
+        </div>
+
     </div>
     <script type="text/javascript">
         var $ = function (ele) {
@@ -177,7 +252,8 @@
             for (var i = 0; i <= temps.length - 1; i++) {
                 var item = temps[i]
                 ele += '<label onclick="setStyle(' + item.id + ',' + item.hasTheme + ')" for="color' + i + '">' +
-                    '<input '+(i == 0 ? 'checked' : '')+' id="color' + i + '" name="colorchose" type="radio"><span>' + item.name + '</span>' +
+                    '<input ' + (i == 0 ? 'checked' : '') + ' id="color' + i +
+                    '" name="menuitem" type="radio"><span>' + item.name + '</span>' +
                     '</label>';
             }
             eStyle.innerHTML = ele;
