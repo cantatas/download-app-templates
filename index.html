@@ -23,7 +23,7 @@
         }
 
         .theme-choose {
-            padding: 10px;
+            padding: 15px;
         }
 
         .theme-choose>div {
@@ -62,27 +62,90 @@
             height: 568px;
             width: 320px;
             margin: 0 auto;
-            border: 5px solid #333;
-            border-radius: 9px;
+            background: #fafafa;
+            border-radius: 20px;
+            box-shadow: 0 8px 12px #ebedf0;
+            overflow: hidden;
+        }
+
+        .nav-component {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            min-width: 220px;
+            max-width: 220px;
+            padding: 24px 0 72px;
+            overflow-y: scroll;
+            background-color: #fff;
+        }
+
+        .nav-component .nav-group {
+            margin-bottom: 16px;
+        }
+
+        .nav-component .nav-group .nav-title {
+            padding: 8px 0 8px 30px;
+            color: #455a64;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 28px;
+        }
+
+        .nav-component .nav-group .nav-item a {
+            display: block;
+            margin: 0;
+            padding: 8px 0 8px 30px;
+            color: #455a64;
+            font-size: 14px;
+            line-height: 28px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-group label {
+            display: block;
+            margin: 0;
+            padding: 8px 0 8px 30px;
+            color: #455a64;
+            font-size: 14px;
+            line-height: 28px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-group input[type=radio] {
+            visibility: hidden;
+        }
+
+        .nav-group label:hover,
+        .nav-group input[type=radio]:checked~span {
+            color: #4fc08d;
+            -webkit-font-smoothing: auto;
         }
     </style>
 </head>
 
 <body>
     <div class="box">
-        <div class="theme-choose style-choose flex">
+        <!-- <div class="theme-choose style-choose flex">
             <div>风格：</div>
             <div class="flex" id="eStyle"></div>
-            <div></div>
-        </div>
+        </div> -->
         <div id="themeChoose" class="theme-choose flex">
-            <div>颜色：</div>
             <div onclick="setTheme(1)" class="theme1"></div>
             <div onclick="setTheme(2)" class="theme2"></div>
             <div onclick="setTheme(3)" class="theme3"></div>
         </div>
         <div class="theme-box">
             <iframe id="themeBox" src="./src/style1/theme1/index.html" frameborder="0"></iframe>
+        </div>
+        <div class="nav-component">
+            <div class="nav-group">
+                <div class="nav-title">风格选择</div>
+                <div id="eStyle" class="items"></div>
+            </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -113,10 +176,11 @@
 
             for (var i = 0; i <= temps.length - 1; i++) {
                 var item = temps[i]
-                ele += '<div class="link" onclick="setStyle(' + item.id + ',' + item.hasTheme + ')">' + item.name +
-                    '</div>'
+                ele += '<label onclick="setStyle(' + item.id + ',' + item.hasTheme + ')" for="color' + i + '">' +
+                    '<input '+(i == 0 ? 'checked' : '')+' id="color' + i + '" name="colorchose" type="radio"><span>' + item.name + '</span>' +
+                    '</label>';
             }
-            eStyle.innerHTML = ele
+            eStyle.innerHTML = ele;
 
         }
         initStyle();
@@ -130,11 +194,11 @@
         }
         var setStyle = function (index, hasTheme) {
             style = index;
-            $('#themeBox').src = "./src/style" + style + "/theme" + theme + "/index.html";
+            $('#themeBox').src = "./src/style" + index + "/theme1/index.html";
             if (hasTheme) {
-                $('#themeChoose').style.display = 'flex'
+                $('#themeChoose').style.visibility = 'visible'
             } else {
-                $('#themeChoose').style.display = 'none'
+                $('#themeChoose').style.visibility = 'hidden'
             }
         }
     </script>
