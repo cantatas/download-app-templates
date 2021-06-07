@@ -256,10 +256,13 @@
 
             for (var i = 0; i <= temps.length - 1; i++) {
                 var item = temps[i]
-                ele += '<label onclick="setStyle(' + item.id + ',' + item.hasTheme + ')" for="color' + i + '">' +
-                    '<input ' + (i == 0 ? 'checked' : '') + ' id="color' + i +
-                    '" name="menuitem" type="radio"><span>' + item.name + '</span>' +
-                    '</label>';
+                ele += '<label onclick="setStyle(' + item.id + ',' + item.hasTheme + ')" for="color' + i + '"> \
+                            <input ' + (i == 0 ? 'checked' : '') + ' \
+                                id="color' + i + '" \
+                                name="menuitem" \
+                                type="radio" /> \
+                                <span>' + item.name + '</span> \
+                        </label>';
             }
             eStyle.innerHTML = ele;
 
