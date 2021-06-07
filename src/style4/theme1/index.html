@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>APP下载</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../css/style4.css" />
+</head>
+
+<body>
+    <div id="eCover" style="background-image: url(./imgs/cover.png);" class="app style4 theme1">
+        <div class="log-img">
+            <img id="eLogo" src="./imgs/logo.png" alt="">
+        </div>
+        <div class="text-content">
+            <div>
+                <div class="text">优选上等阿拉比卡豆</div>
+            </div>
+            <div>
+                <div class="text">WBC世界冠军精心拼配</div>
+            </div>
+            <div>
+                <div class="text">新鲜烘焙 新鲜现磨</div>
+            </div>
+        </div>
+        <a id="eBtn" href="javascript:;" class="down-btn">立即下载</a>
+    </div>
+
+    <script type="text/javascript">
+        var $ = function (ele) {
+            return document.querySelector(ele);
+        }
+        //配置
+        var config = {
+            cover: './imgs/cover.png', //自定义封面图
+            iPhone_download_url: "", // iPhone下载链接
+            android_download_url: "", // Android下载链接
+            logo: "./imgs/logo.png", //自定义logo图
+            open_app_url: ""
+        }
+        var env = function () {
+            var inBrowser = typeof window !== 'undefined'
+            var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+            return {
+                isAndroid: UA && UA.indexOf('android') > 0,
+                isIOS: UA && /iphone|ipad|ipod|ios/.test(UA),
+                isWechat: UA && UA.indexOf('micromessenger') > -1
+            }
+        }
+
+        window.onload = function () {
+            var eLogo = $('#eLogo');
+            var eCover = $('#eCover');
+            var eBtn = $('#eBtn');
+
+            if (env().isAndroid) {
+                open_app_url = config.android_download_url;
+            } else {
+                open_app_url = config.iPhone_download_url;
+            }
+            eBtn.href = open_app_url
+
+            //设置封面
+            eCover.src = config.cover;
+            eLogo.src = config.logo;
+        }
+    </script>
+</body>
+
+</html>
