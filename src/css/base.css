@@ -31,6 +31,7 @@ html {
     counter-reset: section;
     touch-action: manipulation;
 }
+
 /* @media screen and (min-width: 375px) {
     html {
         font-size:100px;
@@ -88,59 +89,68 @@ img {
 li {
     list-style: none;
 }
-.app{
+
+.app {
+    position: relative;
     max-width: 640px;
     min-width: 320px;
     margin: 0 auto;
     height: 100%;
     background: #fefefe;
 }
-:root{
+
+:root {
     /* 绿色 */
-    --green-color:#00cc83;
-    
+    --green-color: #00cc83;
+
     /* 深蓝 */
-    --dark-blue-color:#132668;
+    --dark-blue-color: #132668;
 
     /* 橙色 */
-    --orange-color:#ee7a45;
+    --orange-color: #ee7a45;
 
 
-    --theme1-color:var(--dark-blue-color);
-    --theme2-color:var(--green-color);
-    --theme3-color:var(--orange-color);
+    --theme1-color: var(--dark-blue-color);
+    --theme2-color: var(--green-color);
+    --theme3-color: var(--orange-color);
 
 }
-.flex{
+
+.flex {
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
 }
-.btn{
+
+.btn {
     position: relative;
     height: 44px;
+    line-height: 44px;
     font-size: 14px;
     border-radius: 6px;
+    color: #fff;
     text-align: center;
-   text-decoration: none;
-   outline: none;
-   -webkit-user-select: none;
-   -ms-user-select: none;
-   -moz-user-select: none;
-   user-select: none;
-   -webkit-touch-callout: none;
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   outline: none;
-   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-   -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    outline: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
 }
-.btn svg{
+
+.btn svg {
     position: absolute;
     left: 20px;
 }
-.cover{
+
+.cover {
     position: relative;
     width: 100%;
     height: 50%;
@@ -150,7 +160,8 @@ li {
     overflow: hidden;
     margin-bottom: 25%;
 }
-.cover::after{
+
+.cover::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -158,75 +169,93 @@ li {
     background-color: var(--theme1);
     opacity: .2;
 }
-.btn:active{
+
+.btn:active {
     opacity: 0.6;
 }
-.style1 .btn{
+
+.style1 .btn {
     margin: 30px;
     box-shadow: 0 10px 12px -6px #9b9b9b;
 }
+
 /* --------------------- theme1 start --------------------- */
-.theme1{
+.theme1 {
     --theme-color: var(--theme1-color);
 }
-.theme1 .btn:first-child{
+
+.theme1 .btn:first-child {
     margin-bottom: 0;
 }
-.theme1 .btn.ios{
+
+.theme1 .btn.ios {
     color: #fff;
 }
 
-.theme1 .btn.ios{
+.theme1 .btn.ios {
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme1.style1 .btn.android{
-    border:1px solid var(--theme-color);
+
+.theme1.style1 .btn.android {
+    border: 1px solid var(--theme-color);
     color: var(--theme-color);
 }
-.theme1 .cover{
+
+.theme1 .cover {
     background-color: var(--theme-color);
 }
-.theme1 .cover::after{
+
+.theme1 .cover::after {
     content: '';
     background-color: var(--theme-color);
 }
+
 /* --------------------- theme1 end --------------------- */
 
 .theme2 {
     --theme-color: var(--theme2-color);
 }
-.theme2 .btn.ios{
+
+.theme2 .btn.ios {
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme2.style1 .btn.android{
-    border:1px solid var(--theme-color);
+
+.theme2.style1 .btn.android {
+    border: 1px solid var(--theme-color);
     color: var(--theme-color);
 }
-.theme2 .cover{
+
+.theme2 .cover {
     background-color: var(--theme-color);
 }
-.theme2 .cover::after{
+
+.theme2 .cover::after {
     content: '';
     background-color: var(--theme-color);
 }
+
 /* --------------------- .theme3-color --------------------- */
 .theme3 {
     --theme-color: var(--theme3-color);
 }
-.theme3 .btn.ios{
+
+.theme3 .btn.ios {
     background-color: var(--theme-color);
     color: #fff;
 }
-.theme3.style1 .btn.android{
-    border:1px solid var(--theme-color);
+
+.theme3.style1 .btn.android {
+    border: 1px solid var(--theme-color);
     color: var(--theme-color);
 }
-.theme3 .cover{
+
+.theme3 .cover {
     background-color: var(--theme-color);
 }
-.theme3 .cover::after{
+
+.theme3 .cover::after {
     content: '';
     background-color: var(--theme-color);
 }
