@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>APP下载</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../css/style5.css" />
+</head>
+
+<body>
+    <div id="eCover" style="background-image: url(./imgs/cover.jpeg);" class="app style5 theme1">
+        <div class="flex btn-group">
+            <a id="eBtnOpen" href="javascript:;" class="btn">打开盒马APP</a>
+            <a id="eBtn" href="javascript:;" class="btn">下载盒马APP</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var $ = function (ele) {
+            return document.querySelector(ele);
+        }
+        //配置
+        var config = {
+            cover: './imgs/cover.jpeg', //自定义封面图
+            iPhone_download_url: "", // iPhone下载链接
+            android_download_url: "", // Android下载链接
+            open_app_url: ""
+        }
+        var env = function () {
+            var inBrowser = typeof window !== 'undefined'
+            var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+            return {
+                isAndroid: UA && UA.indexOf('android') > 0,
+                isIOS: UA && /iphone|ipad|ipod|ios/.test(UA),
+                isWechat: UA && UA.indexOf('micromessenger') > -1
+            }
+        }
+
+        window.onload = function () {
+            var eCover = $('#eCover');
+            var eBtn = $('#eBtn');
+            var eBtnOpen = $('#eBtnOpen');
+
+            if (env().isAndroid) {
+                open_app_url = config.android_download_url;
+            } else {
+                open_app_url = config.iPhone_download_url;
+            }
+            eBtn.href = open_app_url;
+            eBtnOpen.href = open_app_url;
+            //设置封面
+            eCover.src = config.cover;
+        }
+    </script>
+</body>
+
+</html>
