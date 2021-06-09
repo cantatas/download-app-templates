@@ -257,6 +257,11 @@
                         name: '盒马鲜生',
                         id: 5,
                         hasTheme: false
+                    },
+                    {
+                        name: '土巴兔',
+                        id: 6,
+                        hasTheme: false
                     }
                 ],
                 eStyle = $('#eStyle'),
@@ -269,7 +274,7 @@
                                 id="color' + i + '" \
                                 name="menuitem" \
                                 type="radio" /> \
-                                <span>' + item.name + '</span> \
+                                <span>'+(i+1)+'. ' + item.name + '</span> \
                         </label>';
             }
             eStyle.innerHTML = ele;
