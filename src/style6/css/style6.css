@@ -47,7 +47,7 @@
 .style6 .slogan span{
     background-color: #fff;
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 8px;
 }
 .style6 .slogan::after{
     content: '';
