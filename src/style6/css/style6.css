@@ -13,10 +13,16 @@
     width: 66px;
     height: 66px;
     margin-right: 10px;
+    border: 1px solid #e4e4e4;
+    border-radius: 12px;
+    overflow: hidden;
 }
 .style6 .top .desc h1{
     font-size: 18px;
     color: #444;
+}
+.style6 .top .desc{
+    flex: 1;
 }
 .style6 .top .desc p{
     margin-top: 5px;
