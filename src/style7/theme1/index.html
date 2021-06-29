@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>APP下载</title>
+    <link rel="stylesheet" href="../../css/base.css?v=1.02" />
+    <link rel="stylesheet" href="../css/style6.css" />
+</head>
+
+<body>
+    <div id="eCover" class="app style6 theme1">
+        <div class="top flex">
+            <div class="logo">
+                <img id="eLogo" src="./imgs/logo.png" alt="">
+            </div>
+            <div class="desc">
+                <h1>土巴兔装修</h1>
+                <p>4100万+次下载用户</p>
+                <p>先装修后支付 装修更有保障</p>
+            </div>
+        </div>
+        <a id="eBtn" href="javascript:;" class="btn">立即下载</a>
+        <div class="slogan">
+            <span>已累计服务4100万业主，装修就上土巴兔</span>
+        </div>
+        <div id="eCovers" class="covers flex"></div>
+    </div>
+
+    <script type="text/javascript">
+        var $ = function (ele) {
+            return document.querySelector(ele);
+        }
+        //配置
+        var config = {
+            logo: './imgs/logo.png', //自定义logo图片
+            iPhone_download_url: "", // iPhone下载链接
+            android_download_url: "", // Android下载链接
+            open_app_url: "",
+            covers: [   //APP截图列表
+                './imgs/1.jpeg',
+                './imgs/2.jpeg',
+                './imgs/3.jpeg',
+                './imgs/4.jpeg'
+            ]
+        }
+        var env = function () {
+            var inBrowser = typeof window !== 'undefined'
+            var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+            return {
+                isAndroid: UA && UA.indexOf('android') > 0,
+                isIOS: UA && /iphone|ipad|ipod|ios/.test(UA),
+                isWechat: UA && UA.indexOf('micromessenger') > -1
+            }
+        }
+
+        window.onload = function () {
+            var eCovers = $('#eCovers');
+            var eBtn = $('#eBtn');
+            var eLogo = $('#eLogo');
+
+            if (env().isAndroid) {
+                open_app_url = config.android_download_url;
+            } else {
+                open_app_url = config.iPhone_download_url;
+            }
+            eBtn.href = open_app_url;
+            //logo图片设置
+            eLogo.src = config.logo;
+
+            //设置封面
+            var coverHTML = ''
+            for (var i = 0; i <= config.covers.length - 1; i++) {
+                var item = config.covers[i];
+                coverHTML += '<img src="' + item + '" alt="' + item + '" />';
+            }
+            eCovers.innerHTML = coverHTML;
+        }
+    </script>
+</body>
+
+</html>

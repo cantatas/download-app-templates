@@ -1,0 +1,80 @@
+.style6{
+}
+.style6 > * {
+    margin: 20px;
+}
+.style6 .top{
+    padding: 20px;
+    padding-bottom: 0;
+    margin: 0;
+    justify-content: flex-start;
+}
+.style6 .top .logo{
+    width: 66px;
+    height: 66px;
+    margin-right: 10px;
+    border: 1px solid #e4e4e4;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.style6 .top .desc h1{
+    font-size: 18px;
+    color: #444;
+}
+.style6 .top .desc{
+    flex: 1;
+}
+.style6 .top .desc p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+.style6 .btn{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    background-color: #24C77E;
+    border-radius: 3px;
+}
+.style6 .slogan{
+    position: relative;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    z-index: 99;
+}
+.style6 .slogan span{
+    background-color: #fff;
+    display: inline-block;
+    padding: 0 8px;
+}
+.style6 .slogan::after{
+    content: '';
+    position: absolute;
+    top:50%;
+    border-bottom: 1px solid #e4e4e4;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.style6 .covers{
+    justify-content: flex-start;
+    overflow: hidden;
+    overflow-x: auto;
+    margin: 0;
+}
+.style6 .covers img{
+    margin-left: 10px;
+    border-radius: 12px;
+    width: 62.3%;
+    border: 1px solid #e4e4e4;
+}
+
+.style6 .covers img:first-child{
+    margin-left: 20px;
+}
+
+
+
+
