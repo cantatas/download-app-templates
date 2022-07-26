@@ -178,14 +178,32 @@
             color: #4fc08d;
             -webkit-font-smoothing: auto;
         }
+        .box .style-control{
+            width: 0;
+            height: 0;
+        }
+        
+        .box .style-control:checked ~ .container .theme-choose{
+            display: none;
+        }
+        .box .style-control:checked ~ .container .theme-box{
+            position: relative;
+            left: 250px;
+            margin-right: 280px;
+            width: auto;
+            height: calc(100vh - 90px);
+            border-radius: 0;
+            box-shadow: none;
+        }
     </style>
 </head>
 
 <body>
     <div class="box">
+        <input type="checkbox" class="style-control" name="styleControl" id="eStyleControl">
         <div class="header-component">
             <div class="logo">
-                APP下载页模版
+                APP下载页模版v1.0
             </div>
             <div class="nav">
                 <ul>
@@ -201,16 +219,16 @@
             <div class="nav-group">
                 <div class="nav-title">使用指南</div>
                 <div class="items">
-                    <label for="guide1">
+                    <!-- <label for="guide1">
                         <input id="guide1" name="menuitem" type="radio"><span>介绍（待更新）</span>
-                    </label>
-                    <label for="guide2">
-                        <input id="guide2" name="menuitem" type="radio"><span>快速上手（待更新）</span>
+                    </label> -->
+                    <label onclick="setTheme(0,'doc')" for="guide2">
+                        <input id="guide2" name="menuitem" type="radio"><span>快速上手</span>
                     </label>
                 </div>
             </div>
             <div class="nav-group">
-                <div class="nav-title">风格选择</div>
+                <div class="nav-title">模版选择</div>
                 <div id="eStyle" class="items"></div>
             </div>
         </div>
@@ -286,11 +304,18 @@
         var style = 1;
         var theme = 1;
 
-        var setTheme = function (index) {
-            theme = index;
-            $('#themeBox').src = "./src/style" + style + "/theme" + theme + "/index.html"
+        var setTheme = function (index,isDoc) {
+            if(isDoc){
+                $('#eStyleControl').checked = true;
+                $('#themeBox').src = "./quickstart.html";
+            }else{
+                theme = index;
+                $('#themeBox').src = "./src/style" + style + "/theme" + theme + "/index.html"
+            }
         }
         var setStyle = function (index, hasTheme) {
+            
+            $('#eStyleControl').checked = false;
             style = index;
             $('#themeBox').src = "./src/style" + index + "/theme1/index.html";
             if (hasTheme) {
